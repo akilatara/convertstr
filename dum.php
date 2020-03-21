@@ -1,7 +1,7 @@
 <?php
 
  $list = array('holdername');
-array_push($list, $row->firstChild->nodeValue);
+array_push($list, '3FB AERWORX PTY. LTD.');
 print_r($list);
     
 

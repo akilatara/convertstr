@@ -5,29 +5,16 @@ libxml_use_internal_errors(TRUE);
 if(!empty($html))
 { 
     $pokemon_doc->loadHTML($html);
-    libxml_clear_errors();
-    $list = array('holdername'); 
+    libxml_clear_errors(); 
 	$pokemon_xpath = new DOMXPath($pokemon_doc);
 	$pokemon_row = $pokemon_xpath->query('//tr');
 if($pokemon_row->length > 0)
 	{
-		foreach($pokemon_row as $row){
-			
-			echo $row->firstChild->nodeValue. "<br>";
-			 
-       array_push($list,$row->firstChild->nodeValue);
-		
-		}
-
-		   $fp = fopen('people.csv', 'w');
-
-   foreach ($list as $fields) {
-    fputcsv($fp, array($fields));
-}
-
-fclose($fp);
-		
-
+		 $s4=" A.C.N. 628 301 066 PTY LTD T/A SEQUOR ANALYTICS";
+	     $s5=($pokemon_row[5]->firstChild->nodeValue);
+	     echo strcmp(trim($s4),trim($s5));
+	     echo"<br>";
+	     var_dump($s5);
 	}
 }
 ?>
